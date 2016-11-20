@@ -56,5 +56,3 @@ def main(my_email, my_password, email=[], subject='Subject:SE\nTyto alab'):
     status = MailSenderAPP(my_email, my_password, email, subject).EmailSender()
 
     return status
-
-main('choeminjun5627@gmail.com', input('password:'), ['choeminjun@naver.com'], 'Subject:aaa\na')
