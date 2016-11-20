@@ -51,12 +51,10 @@ class MailSenderAPP():
         return True
 
 
-def main():
+def main(my_email, my_password, email=[], subject='Subject:SE\nTyto alab'):
     MailSenderAPP.__loggerSetup__()
-    status = MailSenderAPP('choeminjun5627@gmail.com', input('password:'), \
-                          ['choeminjun@naver.com', 'jckcj@naawefver.com'], 'Subject:hello\nHello?').EmailSender()
+    status = MailSenderAPP(my_email, my_password, email, subject).EmailSender()
 
     return status
 
-status = main()
-print(status)
+main('choeminjun5627@gmail.com', input('password:'), ['choeminjun@naver.com'], 'Subject:aaa\na')
