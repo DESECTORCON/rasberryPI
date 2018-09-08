@@ -20,3 +20,6 @@ INFO:root:logining to gmail sever:success
 INFO:root:Sending mail to ['choeminjun@naver.com']...
 INFO:root:Sending mail to ['choeminjun@naver.com']:success
 INFO:root:-----------Program Exited-------------
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:Unknown IMAP4 command: 'ehlo'
+ERROR:root:Error while finding latest emailcommand SELECT illegal in state NONAUTH, only allowed in states AUTH, SELECTED

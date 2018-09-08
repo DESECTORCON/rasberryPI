@@ -1,4 +1,4 @@
-import smtplib, logging, datetime
+import smtplib, logging, datetime, imaplib
 
 
 class MailSenderAPP(object):
@@ -65,3 +65,45 @@ class MailSenderAPP(object):
 #     status = MailSenderAPP(my_email, my_password, email, subject).EmailSender()
 #
 #     return status
+
+
+class MailReaderAPP(object):
+
+    def __init__(self, my_email, my_password):
+        self.myEmail = my_email
+        self.myPassword = my_password
+        self.mailSever = imaplib.IMAP4("smtp.gmail.com")
+
+    @staticmethod
+    def __loggerSetup__():
+        logging.basicConfig(filename='logging.txt', level=logging.DEBUG)
+
+    def connect_to_server(self):
+        try:
+            logging.info('Trying to connect to gmail sever...')
+
+            self.mailSever.ehlo()
+            self.mailSever.starttls()
+            logging.info('connect to sever:success')
+        except Exception as Error:
+            logging.error('Cant connect to gmail sever. Error messge:' + str(Error))
+            return 'Sever connect Error:' + str(Error)
+
+    def read_latest_mail_and_command(self):
+        try:
+            self.mailSever.select('inbox')
+            type, data = self.mailSever.search(None, 'ALL')
+            mail_ids = data[0]
+            id_list = mail_ids.split()
+            first_email_id = int(id_list[0])
+
+            typ, data = self.mailSever.fetch(first_email_id, '(RFC822)')  # i is the email id
+            return typ
+        except Exception as E:
+            logging.error('Error while finding latest email' + str(E))
+            return 'Sever email read error:' + str(E)
+
+    def end_connection(self):
+        self.mailSever.close()
+        logging.info('-----------Program Exited-------------')
+
