@@ -6,14 +6,14 @@ class MailSenderAPP(object):
     def __init__(self, my_email, my_password):
         self.myEmail = my_email
         self.myPassword = my_password
-        # self.Emailsuq = email
+        # Emailsuq = email
         # self.Subject = subject
 
     @staticmethod
     def __loggerSetup__():
         logging.basicConfig(filename='SendMail_rasLOG.log', level=logging.DEBUG)
 
-    def EmailSender(self):
+    def EmailSender(self, Emailsuq, subject):
         logging.info('--------Program Starting at:%s.-------------' % (datetime.datetime.now()))
         try:
             logging.info('Trying to connect to gmail sever...')
@@ -35,24 +35,23 @@ class MailSenderAPP(object):
 
 
         try:
-            logging.info('Sending mail to %s...' % (self.Emailsuq))
+            logging.info('Sending mail to %s...' % (Emailsuq))
             Email_number = 0
-            for email in self.Emailsuq:
-                mailSever.sendmail(self.myEmail, email, self.Subject)
+            for email in Emailsuq:
+                mailSever.sendmail(self.myEmail, email, subject)
                 Email_number += 1
-            logging.info('Sending mail to %s:success' % (self.Emailsuq))
+            logging.info('Sending mail to %s:success' % (Emailsuq))
         except Exception as Error:
-            logging.info('Cant Send mail to %s. Error messge:' + str(Error) % (self.Emailsuq[Email_number]))
+            logging.info('Cant Send mail to %s. Error messge:'+str(Error))
             return 'Mail sending Error:' + str(Error)
-
 
         mailSever.close()
         logging.info('-----------Program Exited-------------')
         return True
-
-
-def main(my_email, my_password, email=[], subject='Subject:SE\nTyto alab'):
-    MailSenderAPP.__loggerSetup__()
-    status = MailSenderAPP(my_email, my_password, email, subject).EmailSender()
-
-    return status
+#
+#
+# def main(my_email, my_password, email=[], subject='Subject:SE\nTyto alab'):
+#     MailSenderAPP.__loggerSetup__()
+#     status = MailSenderAPP(my_email, my_password, email, subject).EmailSender()
+#
+#     return status
