@@ -1,2 +1,14 @@
 INFO:root:--------Program Starting at:2018-09-08 15:42:28.826160.-------------
 ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
+INFO:root:--------Program Starting at:2018-09-08 15:43:36.570066.-------------
+ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
+INFO:root:--------Program Starting at:2018-09-08 15:44:07.708064.-------------
+ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
+INFO:root:--------Program Starting at:2018-09-08 15:44:21.896372.-------------
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:root:Trying to login With Email and password...
+INFO:root:logining to gmail sever:success
+INFO:root:Sending mail to ['choeminjun@naver.com']...
+INFO:root:Sending mail to ['choeminjun@naver.com']:success
+INFO:root:-----------Program Exited-------------
