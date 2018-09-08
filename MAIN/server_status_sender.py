@@ -10,4 +10,5 @@ mailsender = MailReaderAPP(my_email='SE.servicesemail.com@gmail.com', my_passwor
 mailsender.__loggerSetup__()
 mailsender.connect_to_server()
 statuc = mailsender.read_latest_mail_and_command()
-mailsender.end_connection()
+# mailsender.end_connection()
+print(statuc)

@@ -1,25 +1,16 @@
-INFO:root:--------Program Starting at:2018-09-08 15:42:28.826160.-------------
-ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
-INFO:root:--------Program Starting at:2018-09-08 15:43:36.570066.-------------
-ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
-INFO:root:--------Program Starting at:2018-09-08 15:44:07.708064.-------------
-ERROR:root:Emailsuq have to be a list ,like this: ["blah@blah.com"]
-INFO:root:--------Program Starting at:2018-09-08 15:44:21.896372.-------------
-INFO:root:Trying to connect to gmail sever...
-INFO:root:connect to sever:success
-INFO:root:Trying to login With Email and password...
-INFO:root:logining to gmail sever:success
-INFO:root:Sending mail to ['choeminjun@naver.com']...
-INFO:root:Sending mail to ['choeminjun@naver.com']:success
-INFO:root:-----------Program Exited-------------
-INFO:root:Trying to connect to gmail sever...
-INFO:root:connect to sever:success
-INFO:root:--------Program Starting at:2018-09-08 15:48:04.144168.-------------
-INFO:root:Trying to login With Email and password...
-INFO:root:logining to gmail sever:success
-INFO:root:Sending mail to ['choeminjun@naver.com']...
-INFO:root:Sending mail to ['choeminjun@naver.com']:success
-INFO:root:-----------Program Exited-------------
+
 INFO:root:Trying to connect to gmail sever...
 ERROR:root:Cant connect to gmail sever. Error messge:Unknown IMAP4 command: 'ehlo'
 ERROR:root:Error while finding latest emailcommand SELECT illegal in state NONAUTH, only allowed in states AUTH, SELECTED
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:Unknown IMAP4 command: 'ehlo'
+ERROR:root:Error while finding latest emailcommand SELECT illegal in state NONAUTH, only allowed in states AUTH, SELECTED
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:Unknown IMAP4 command: 'ehlo'
+ERROR:root:Error while finding latest emailcommand SEARCH illegal in state NONAUTH, only allowed in states SELECTED
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:TLS not supported by server
+ERROR:root:Error while finding latest emailcommand SEARCH illegal in state NONAUTH, only allowed in states SELECTED
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+ERROR:root:Error while finding latest emailcommand SEARCH illegal in state NONAUTH, only allowed in states SELECTED

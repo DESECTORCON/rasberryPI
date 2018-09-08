@@ -73,6 +73,7 @@ class MailReaderAPP(object):
         self.myEmail = my_email
         self.myPassword = my_password
         self.mailSever = imaplib.IMAP4("smtp.gmail.com")
+        self.mailSever.select('inbox')
 
     @staticmethod
     def __loggerSetup__():
@@ -81,9 +82,7 @@ class MailReaderAPP(object):
     def connect_to_server(self):
         try:
             logging.info('Trying to connect to gmail sever...')
-
-            self.mailSever.ehlo()
-            self.mailSever.starttls()
+            # self.mailSever.starttls()
             logging.info('connect to sever:success')
         except Exception as Error:
             logging.error('Cant connect to gmail sever. Error messge:' + str(Error))
@@ -91,14 +90,23 @@ class MailReaderAPP(object):
 
     def read_latest_mail_and_command(self):
         try:
-            self.mailSever.select('inbox')
             type, data = self.mailSever.search(None, 'ALL')
             mail_ids = data[0]
+
             id_list = mail_ids.split()
             first_email_id = int(id_list[0])
+            latest_email_id = int(id_list[-1])
 
-            typ, data = self.mailSever.fetch(first_email_id, '(RFC822)')  # i is the email id
-            return typ
+            for i in range(latest_email_id, first_email_id, -1):
+                typ, data = self.mailSever.fetch(i, '(RFC822)')
+
+                for response_part in data:
+                    if isinstance(response_part, tuple):
+                        msg = self.myEmail.message_from_string(response_part[1])
+                        email_subject = msg['subject']
+                        email_from = msg['from']
+                        print('From : ' + email_from + '\n')
+                        print('Subject : ' + email_subject + '\n')
         except Exception as E:
             logging.error('Error while finding latest email' + str(E))
             return 'Sever email read error:' + str(E)
