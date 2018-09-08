@@ -1,17 +1,17 @@
 import smtplib, logging, datetime
 
-class MailSenderAPP():
 
-    def __init__(self, my_email, my_password, email=[], subject='Subject:SE\nTyto alab'):
+class MailSenderAPP(object):
+
+    def __init__(self, my_email, my_password):
         self.myEmail = my_email
         self.myPassword = my_password
-        self.Emailsuq = email
-        self.Subject = subject
+        # self.Emailsuq = email
+        # self.Subject = subject
 
-
+    @staticmethod
     def __loggerSetup__():
         logging.basicConfig(filename='SendMail_rasLOG.log', level=logging.DEBUG)
-
 
     def EmailSender(self):
         logging.info('--------Program Starting at:%s.-------------' % (datetime.datetime.now()))
