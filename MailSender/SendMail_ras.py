@@ -1,5 +1,6 @@
 import smtplib, logging, datetime, imaplib
-
+import email
+AUTH_EMAIL_SENDER = 'choeminjun@naver.com'
 
 class MailSenderAPP(object):
 
@@ -72,8 +73,8 @@ class MailReaderAPP(object):
     def __init__(self, my_email, my_password):
         self.myEmail = my_email
         self.myPassword = my_password
-        self.mailSever = imaplib.IMAP4("smtp.gmail.com")
-        self.mailSever.select('inbox')
+        self.mailSever = imaplib.IMAP4_SSL("smtp.gmail.com", 993)
+
 
     @staticmethod
     def __loggerSetup__():
@@ -90,23 +91,46 @@ class MailReaderAPP(object):
 
     def read_latest_mail_and_command(self):
         try:
-            type, data = self.mailSever.search(None, 'ALL')
-            mail_ids = data[0]
+            self.mailSever.login(self.myEmail, self.myPassword)
+            self.mailSever.list()
+            self.mailSever.select('inbox')
 
-            id_list = mail_ids.split()
-            first_email_id = int(id_list[0])
-            latest_email_id = int(id_list[-1])
+            unread_emails = []
 
-            for i in range(latest_email_id, first_email_id, -1):
-                typ, data = self.mailSever.fetch(i, '(RFC822)')
+            result, data = self.mailSever.uid('search', None, "UNSEEN")  # (ALL/UNSEEN)
+            i = len(data[0].split())
 
-                for response_part in data:
-                    if isinstance(response_part, tuple):
-                        msg = self.myEmail.message_from_string(response_part[1])
-                        email_subject = msg['subject']
-                        email_from = msg['from']
-                        print('From : ' + email_from + '\n')
-                        print('Subject : ' + email_subject + '\n')
+            for x in range(i):
+                latest_email_uid = data[0].split()[x]
+                result, email_data = self.mailSever.uid('fetch', latest_email_uid, '(RFC822)')
+                # result, email_data = conn.store(num,'-FLAGS','\\Seen')
+                # this might work to set flag to seen, if it doesn't already
+                raw_email = email_data[0][1]
+                raw_email_string = raw_email.decode('utf-8')
+                email_message = email.message_from_string(raw_email_string)
+
+                # Header Details
+                date_tuple = email.utils.parsedate_tz(email_message['Date'])
+                if date_tuple:
+                    local_date = datetime.datetime.fromtimestamp(email.utils.mktime_tz(date_tuple))
+                    local_message_date = "%s" % (str(local_date.strftime("%a, %d %b %Y %H:%M:%S")))
+                email_from = str(email.header.make_header(email.header.decode_header(email_message['From'])))
+                email_to = str(email.header.make_header(email.header.decode_header(email_message['To'])))
+                subject = str(email.header.make_header(email.header.decode_header(email_message['Subject'])))
+
+                # Body details
+                for part in email_message.walk():
+                    if part.get_content_type() == "text/plain":
+                        body = part.get_payload(decode=True)
+                        unread_emails.append({'Body': body.decode('utf-8'), 'sender': email_from})
+                    else:
+                        continue
+
+            for i in unread_emails:
+                if i['sender'] == '최민준 <choeminjun@naver.com>':
+                    print('oho')
+                print(i['sender'])
+
         except Exception as E:
             logging.error('Error while finding latest email' + str(E))
             return 'Sever email read error:' + str(E)
