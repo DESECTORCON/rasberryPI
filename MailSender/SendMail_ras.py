@@ -11,13 +11,13 @@ class MailSenderAPP(object):
 
     @staticmethod
     def __loggerSetup__():
-        logging.basicConfig(filename='SendMail_rasLOG.log', level=logging.DEBUG)
+        logging.basicConfig(filename='logging.txt', level=logging.DEBUG)
 
     def EmailSender(self, Emailsuq, subject):
         logging.info('--------Program Starting at:%s.-------------' % (datetime.datetime.now()))
-        if type(Emailsuq).__name__:
+        if type(Emailsuq).__name__  != 'string':
             logging.error('Emailsuq have to be a list ,like this: ["blah@blah.com"]')
-            return 'Emailsuq have to be a list Error'
+            return 'Emailsuq have to be a list Error' + str(type(Emailsuq))
 
         try:
             logging.info('Trying to connect to gmail sever...')
