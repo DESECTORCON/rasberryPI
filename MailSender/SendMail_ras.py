@@ -15,6 +15,10 @@ class MailSenderAPP(object):
 
     def EmailSender(self, Emailsuq, subject):
         logging.info('--------Program Starting at:%s.-------------' % (datetime.datetime.now()))
+        if type(Emailsuq).__name__:
+            logging.error('Emailsuq have to be a list ,like this: ["blah@blah.com"]')
+            return 'Emailsuq have to be a list Error'
+
         try:
             logging.info('Trying to connect to gmail sever...')
             mailSever = smtplib.SMTP("smtp.gmail.com", 587)
