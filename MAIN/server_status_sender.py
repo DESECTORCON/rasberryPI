@@ -52,6 +52,7 @@ def getting_reademail():
     while RUNSTATUS:
         statuc = mailreader.read_latest_mail_and_command()
         print(statuc)
+        print(MAIL_SEND_DURATION)
         for i in statuc:
             if 'shutdown' in i['Body']:
                 mailreader.end_connection()
