@@ -1,15 +1,15 @@
 from rasberryPI.MailSender.SendMail_ras import MailSenderAPP, MailReaderAPP
 import re, requests
-from multiprocessing.dummy import Pool as ThreadPool
+import threading
 import time
 
 MASTER_EMAIL = 'choeminjun@naver.com'
 MAIL_SEND_DURATION = 1
 RUNSTATUS = True
 
-
-mailreader = MailReaderAPP(my_email='SE.servicesemail.com@gmail.com', my_password=input('give_value   '), )
-mailsender = MailSenderAPP(my_email='SE.servicesemail.com@gmail.com', my_password=input('give_value   '), )
+PASSWORD = input()
+mailreader = MailReaderAPP(my_email='SE.servicesemail.com@gmail.com', my_password=PASSWORD, )
+mailsender = MailSenderAPP(my_email='SE.servicesemail.com@gmail.com', my_password=PASSWORD, )
 mailreader.__loggerSetup__()
 mailsender.__loggerSetup__()
 mailreader.connect_to_server()
@@ -64,7 +64,7 @@ def getting_reademail():
                     if len(numbers) > 1:
                         mailsender.__loggerSetup__()
                         mailsender.connect_to_server()
-                        mailsender.EmailSender(['choeminjun@naver.com'],
+                        mailsender.EmailSender([MASTER_EMAIL],
                                                 'Please send one number (only minutes) ext(100)')
                         mailsender.end_connection()
                         continue
@@ -83,6 +83,17 @@ def sender_mail():
 
     while RUNSTATUS:
         send_status()
-        time.sleep(MAIL_SEND_DURATION)
+        time.sleep(MAIL_SEND_DURATION * 60)
+
+def main():
+    threads = []
+    t = threading.Thread(target=sender_mail)
+    t2 = threading.Thread(target=getting_reademail)
+    threads.append(t)
+    threads.append(t2)
+    t.start()
+    t2.start()
 
 
+if __name__ == '__main__':
+    main()
