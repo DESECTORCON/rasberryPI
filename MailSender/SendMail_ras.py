@@ -79,6 +79,7 @@ class MailReaderAPP(object):
     @staticmethod
     def __loggerSetup__():
         logging.basicConfig(filename='logging.txt', level=logging.DEBUG)
+        logging.debug('--------------MailReaderAPP----------------')
 
     def connect_to_server(self):
         try:
@@ -125,13 +126,13 @@ class MailReaderAPP(object):
                 logging.info('getting body details...')
                 for part in email_message.walk():
                     if part.get_content_type() == "text/plain":
-                        logging.info('getting body details of '+ part)
+                        logging.info('getting body details of '+ str(part))
                         body = part.get_payload(decode=True)
                         unread_emails.append({'Body': body.decode('utf-8'), 'sender': email_from})
                     else:
                         continue
             try:
-                logging.info('')
+                logging.info('returning resaults...')
                 unread_email_ = []
                 for i in unread_emails:
                     if i['sender'] == '최민준 <choeminjun@naver.com>':
