@@ -12,8 +12,8 @@ mailreader = MailReaderAPP(my_email='SE.servicesemail.com@gmail.com', my_passwor
 mailsender = MailSenderAPP(my_email='SE.servicesemail.com@gmail.com', my_password=PASSWORD, )
 mailreader.__loggerSetup__()
 mailsender.__loggerSetup__()
-mailreader.connect_to_server()
 mailsender.connect_to_server()
+mailreader.connect_to_server()
 
 # mailsender.__loggerSetup__()
 # mailsender.connect_to_server()
@@ -51,10 +51,14 @@ def getting_reademail():
 
     while RUNSTATUS:
         statuc = mailreader.read_latest_mail_and_command()
+        print(statuc)
         for i in statuc:
             if 'shutdown' in i['Body']:
                 mailreader.end_connection()
                 RUNSTATUS = False
+
+                mailsender.EmailSender([MASTER_EMAIL],
+                                       'Please send one number (only minutes) ext(100)')
                 break
 
             elif 'change duration' in i['Body']:
@@ -62,11 +66,8 @@ def getting_reademail():
                     numbers = re.findall(r'\d+', i['Body'])
 
                     if len(numbers) > 1:
-                        mailsender.__loggerSetup__()
-                        mailsender.connect_to_server()
                         mailsender.EmailSender([MASTER_EMAIL],
                                                 'Please send one number (only minutes) ext(100)')
-                        mailsender.end_connection()
                         continue
                     else:
                         MAIL_SEND_DURATION = int(numbers[0])
@@ -76,6 +77,7 @@ def getting_reademail():
 
             elif 'send now' in i['Body']:
                 send_status()
+    time.sleep(1)
 
 
 def sender_mail():

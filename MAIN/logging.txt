@@ -70,3 +70,141 @@ INFO:root:getting unseen emails...
 INFO:root:returning resaults...
 INFO:root:Trying to connect to gmail sever...
 ERROR:root:Error while finding latest emailcommand LOGIN illegal in state SELECTED, only allowed in states NONAUTH
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 14:49:50.935703.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:logining to gmail sever:success
+INFO:root:Sending mail to ['choeminjun@naver.com']...
+INFO:root:Sending mail to ['choeminjun@naver.com']:success
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 14:50:52.634779.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:logining to gmail sever:success
+INFO:root:Sending mail to ['choeminjun@naver.com']...
+INFO:root:Sending mail to ['choeminjun@naver.com']:success
+DEBUG:root:--------------MailReaderAPP----------------
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:root:--------Program Starting at:2018-09-09 14:52:02.284672.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant login to gmail sever. Error messge:(535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials s27-v6sm27308460pfk.133 - gsmtp')
+INFO:root:-----------Program Exited-------------
+ERROR:root:Error while finding latest emailb'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+DEBUG:root:--------------MailReaderAPP----------------
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:root:--------Program Starting at:2018-09-09 14:53:14.178236.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Error while finding latest emailb'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+ERROR:root:Cant login to gmail sever. Error messge:(535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials q85-v6sm18457464pfa.151 - gsmtp')
+INFO:root:-----------Program Exited-------------
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:please run connect() first
+INFO:root:--------Program Starting at:2018-09-09 14:54:15.481332.-------------
+INFO:root:Trying to login With Email and password...
+ERROR:root:Cant login to gmail sever. Error messge:SMTP AUTH extension not supported by server.
+INFO:root:-----------Program Exited-------------
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Cant connect to gmail sever. Error messge:please run connect() first
+INFO:root:--------Program Starting at:2018-09-09 14:55:15.804120.-------------
+INFO:root:Trying to login With Email and password...
+ERROR:root:Cant login to gmail sever. Error messge:SMTP AUTH extension not supported by server.
+INFO:root:-----------Program Exited-------------
+DEBUG:root:--------------MailReaderAPP----------------
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:Trying to connect to gmail sever...
+INFO:root:--------Program Starting at:2018-09-09 14:56:33.297101.-------------
+INFO:root:Trying to login With Email and password...
+ERROR:root:Error while finding latest emailb'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'
+ERROR:root:Cant login to gmail sever. Error messge:(535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials j5-v6sm15042375pff.139 - gsmtp')
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 14:57:34.603207.-------------
+INFO:root:Trying to login With Email and password...
+ERROR:root:Cant login to gmail sever. Error messge:(535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials j5-v6sm15042375pff.139 - gsmtp')
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 14:58:35.749612.-------------
+INFO:root:Trying to login With Email and password...
+ERROR:root:Cant login to gmail sever. Error messge:(535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials j5-v6sm15042375pff.139 - gsmtp')
+DEBUG:root:--------------MailReaderAPP----------------
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:root:Trying to connect to gmail sever...
+INFO:root:connect to sever:success
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 14:59:23.831868.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:Trying to connect to gmail sever...
+INFO:root:logining to gmail sever:success
+INFO:root:Sending mail to ['choeminjun@naver.com']...
+INFO:root:selecting inbox...
+INFO:root:getting unseen emails...
+INFO:root:Decoding unseen email0
+INFO:root:Sending mail to ['choeminjun@naver.com']:success
+INFO:root:getting body details...
+INFO:root:getting body details of Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+Y2hhbmdlIGR1cmF0aW9uCg==
+
+INFO:root:Decoding unseen email1
+INFO:root:getting body details...
+INFO:root:getting body details of Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+Y2hhbmdlIGR1cmF0aW9uIDIK
+
+INFO:root:Decoding unseen email2
+INFO:root:getting body details...
+INFO:root:getting body details of Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+U0UgZm91bmRhdGlvbg0KDQpBY2Nlc3MgZm9yIGxlc3Mgc2VjdXJlIGFwcHMgc2V0dGluZyBoYXMg
+YmVlbiB0dXJuZWQgb24NCnNlLnNlcnZpY2VzZW1haWwuY29tQGdtYWlsLmNvbQ0KQWNjZXNzIGZv
+ciBsZXNzIHNlY3VyZSBhcHBzIHNldHRpbmcgaGFzIGJlZW4gdHVybmVkIG9uIGZvciB5b3VyIEdv
+b2dsZQ0KQWNjb3VudCBzZS5zZXJ2aWNlc2VtYWlsLmNvbUBnbWFpbC5jb20uIElmIHlvdSBkaWRu
+J3QgY2hhbmdlIGl0LCB5b3Ugc2hvdWxkDQpsb29rIGluIHRvIHdoYXQgaGFwcGVuZWQuDQoNCg0K
+DQpDaGVjayBhY3Rpdml0eQ0KPGh0dHBzOi8vYWNjb3VudHMuZ29vZ2xlLmNvbS9BY2NvdW50Q2hv
+b3Nlcj9FbWFpbD1zZS5zZXJ2aWNlc2VtYWlsLmNvbUBnbWFpbC5jb20mY29udGludWU9aHR0cHM6
+Ly9teWFjY291bnQuZ29vZ2xlLmNvbS9kZXZpY2UtYWN0aXZpdHk/cmZuJTNEMjglMjZyZm5jJTNE
+MSUyNmVpZCUzRC0yOTUyMjYwNDM1ODQ2Njg5MzcxJTI2ZXQlM0QwJTI2YXNhZSUzRDIlMjZhbmV4
+cCUzRGdpdmFiLWZhLS1ndW5zdjItZjE+DQo8aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL0Fj
+Y291bnRDaG9vc2VyP0VtYWlsPXNlLnNlcnZpY2VzZW1haWwuY29tQGdtYWlsLmNvbSZjb250aW51
+ZT1odHRwczovL215YWNjb3VudC5nb29nbGUuY29tL2RldmljZS1hY3Rpdml0eT9yZm4lM0QyOCUy
+NnJmbmMlM0QxJTI2ZWlkJTNELTI5NTIyNjA0MzU4NDY2ODkzNzElMjZldCUzRDAlMjZhc2FlJTNE
+MiUyNmFuZXhwJTNEZ2l2YWItZmEtLWd1bnN2Mi1mMT4NCg0KDQpZb3UgcmVjZWl2ZWQgdGhpcyBl
+bWFpbCB0byBsZXQgeW91IGtub3cgYWJvdXQgaW1wb3J0YW50IGNoYW5nZXMgdG8geW91cg0KR29v
+Z2xlIEFjY291bnQgYW5kIHNlcnZpY2VzLg0KwqkgMjAxOCBHb29nbGUgTExDLDE2MDAgQW1waGl0
+aGVhdHJlIFBhcmt3YXksIE1vdW50YWluIFZpZXcsIENBIDk0MDQzLCBVU0ENCjE1MzY0NzI2Mjkw
+MzcwMDANCg==
+INFO:root:returning resaults...
+INFO:root:Trying to connect to gmail sever...
+ERROR:root:Error while finding latest emailcommand LOGIN illegal in state SELECTED, only allowed in states NONAUTH
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 167.99.66.234
+DEBUG:requests.packages.urllib3.connectionpool:"GET /sys/info/get/to__/esa_key_/20fefskdnfWwefwejfjwo%C2%A5 HTTP/1.1" 200 80
+INFO:root:--------Program Starting at:2018-09-09 15:00:25.985445.-------------
+INFO:root:Trying to login With Email and password...
+INFO:root:logining to gmail sever:success
+INFO:root:Sending mail to ['choeminjun@naver.com']...
+INFO:root:Sending mail to ['choeminjun@naver.com']:success

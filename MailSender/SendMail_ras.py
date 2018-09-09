@@ -18,7 +18,7 @@ class MailSenderAPP(object):
     def connect_to_server(self):
         try:
             logging.info('Trying to connect to gmail sever...')
-
+            self.mailSever.login(self.myEmail, self.myPassword)
             self.mailSever.ehlo()
             self.mailSever.starttls()
             logging.info('connect to sever:success')
@@ -34,7 +34,6 @@ class MailSenderAPP(object):
 
         try:
             logging.info('Trying to login With Email and password...')
-            self.mailSever.login(self.myEmail, self.myPassword)
             logging.info('logining to gmail sever:success')
         except Exception as Error:
             logging.error('Cant login to gmail sever. Error messge:' + str(Error))
@@ -85,6 +84,7 @@ class MailReaderAPP(object):
         try:
             logging.info('Trying to connect to gmail sever...')
             # self.mailSever.starttls()
+            self.mailSever.login(self.myEmail, self.myPassword)
             logging.info('connect to sever:success')
         except Exception as Error:
             logging.error('Cant connect to gmail sever. Error messge:' + str(Error))
@@ -93,7 +93,6 @@ class MailReaderAPP(object):
     def read_latest_mail_and_command(self):
         try:
             logging.info('Trying to connect to gmail sever...')
-            self.mailSever.login(self.myEmail, self.myPassword)
             logging.info('selecting inbox...')
             self.mailSever.list()
             self.mailSever.select('inbox')
