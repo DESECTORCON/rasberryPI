@@ -91,16 +91,19 @@ class MailReaderAPP(object):
 
     def read_latest_mail_and_command(self):
         try:
+            logging.info('Trying to connect to gmail sever...')
             self.mailSever.login(self.myEmail, self.myPassword)
+            logging.info('selecting inbox...')
             self.mailSever.list()
             self.mailSever.select('inbox')
 
             unread_emails = []
-
+            logging.info('getting unseen emails...')
             result, data = self.mailSever.uid('search', None, "UNSEEN")  # (ALL/UNSEEN)
             i = len(data[0].split())
 
             for x in range(i):
+                logging.info('Decoding unseen email' + str(x))
                 latest_email_uid = data[0].split()[x]
                 result, email_data = self.mailSever.uid('fetch', latest_email_uid, '(RFC822)')
                 # result, email_data = conn.store(num,'-FLAGS','\\Seen')
@@ -119,17 +122,24 @@ class MailReaderAPP(object):
                 subject = str(email.header.make_header(email.header.decode_header(email_message['Subject'])))
 
                 # Body details
+                logging.info('getting body details...')
                 for part in email_message.walk():
                     if part.get_content_type() == "text/plain":
+                        logging.info('getting body details of '+ part)
                         body = part.get_payload(decode=True)
                         unread_emails.append({'Body': body.decode('utf-8'), 'sender': email_from})
                     else:
                         continue
+            try:
+                logging.info('')
+                unread_email_ = []
+                for i in unread_emails:
+                    if i['sender'] == '최민준 <choeminjun@naver.com>':
+                        unread_email_.append(i)
 
-            for i in unread_emails:
-                if i['sender'] == '최민준 <choeminjun@naver.com>':
-                    print('oho')
-                print(i['sender'])
+                return unread_email_
+            except:
+                return None
 
         except Exception as E:
             logging.error('Error while finding latest email' + str(E))
